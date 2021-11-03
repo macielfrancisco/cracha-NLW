@@ -1,0 +1,105 @@
+/* Cascating Style Sheet */
+
+* {
+  margin: 0;
+}
+/* Seletor universal */
+/* Estilizar todos os elementos do código */
+
+html,
+body {
+  --black: hsla(240, 6%, 13%);
+  --gray: hsla(240, 9%, 89%);
+  /* Definindo uma variável de cor no documento inteiro */
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* Propriedade vai funcionar nos navegadores chrome ou safari, suavizando a fonte */
+}
+
+body {
+  display: grid;
+  /* Posicionamento dos elementos para trabalhar melhor o layout */
+  place-items: center;
+}
+
+main {
+  background: url(images/background.svg);
+  width: 375px;
+  height: 812px;
+}
+
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--gray);
+}
+
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  /* rem é uma medida que utiliza a medida padrão da página */
+  /* 1rem equivale a 16px */
+
+  position: relative;
+  /* Definindo o limite da posição absoluta, para o elemento não levar em consideração toda a página, e sim apenas o elemento com a classe avatar */
+}
+
+.avatar span {
+  position: absolute;
+  /* Modificar o nível dos objetos da página, podendo colocar um em cima do outro. A partir dessa propriedade, é liberado as propriedades novas abaixo */
+  top: -15px;
+  z-index: 1;
+  /* Caso o elemento perca seu nível, é utilizável essa propriedade para nivelar a profundidade */
+}
+
+/* Pegar a imagem de primeiro nível */
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+  /* Adaptando imagem ao tamanho definido, para evitar que fique esticada */
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  /* Propriedade para utilizar shapes para formatar a imagem, através do site https://bennettfeely.com/clippy/ */
+}
+
+h1 {
+  font-size: 1.5rem;
+
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--gray);
+  text-decoration: none;
+
+  margin-top: 0.25rem;
+
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center; /* Garantindo o alinhamento dos itens */
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 4rem;
+
+  list-style: none;
+  /* Retirar os pontos da lista não ordenada */
+  padding: 0;
+
+  display: flex;
+  /* Elementos fiquem um ao lado do outro no eixo vertical, main, principal */
+  gap: 0.5rem;
+  /* Fazer o espaçamento dos elementos a partir do display flex */
+
+  justify-content: center;
+  /* Alinhamento dos elementos a partir do display flex */
+}
